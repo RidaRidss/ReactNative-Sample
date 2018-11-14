@@ -1,0 +1,77 @@
+{
+  "name": "grocery",
+  "version": "1.0.0",
+  "description": "grocery app",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RidaRidss/ReactNative-Sample.git"
+  },
+  "author": "Rida Bilgrami",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RidaRidss/ReactNative-Sample/issues"
+  },
+  "homepage": "https://github.com/RidaRidss/ReactNative-Sample#readme",
+  "dependencies": {
+    "add": "^2.0.6",
+    "apisauce": "^0.14.3",
+    "autobind": "^1.0.3",
+    "autobind-decorator": "^2.1.0",
+    "base-64": "^0.1.0",
+    "core-decorators": "^0.20.0",
+    "create-react-class": "^15.6.3",
+    "lodash": "^4.17.10",
+    "moment": "^2.22.1",
+    "native-base": "^2.8.0",
+    "numeral": "^2.0.6",
+    "react": "16.5.0",
+    "react-native": "0.57.1",
+    "react-native-icon-badge": "^1.1.3",
+    "react-native-image-placeholder": "^1.0.14",
+    "react-native-keyboard-manager": "^4.0.13-10",
+    "react-native-message-bar": "^2.0.10",
+    "react-native-modal": "^7.0.0",
+    "react-native-router-flux": "^4.0.6",
+    "react-native-snap-carousel": "^3.7.5",
+    "react-native-star-rating": "^1.1.0",
+    "react-native-swipeout": "^2.3.6",
+    "react-native-swiper": "^1.5.13",
+    "react-navigation": "^2.3.1",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-logger": "^3.0.6",
+    "redux-saga": "^0.16.0",
+    "redux-storage": "^4.1.2",
+    "redux-storage-decorator-filter": "^1.1.8",
+    "redux-storage-engine-reactnativeasyncstorage": "^1.0.5",
+    "remote-redux-devtools": "^0.5.13",
+    "seamless-immutable": "^7.1.3",
+    "yarn": "^1.9.4"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.3",
+    "babel-jest": "22.4.3",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react-native": "4.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "eslint-plugin-react-native": "^3.2.1",
+    "flow-bin": "^0.71.0",
+    "jest": "22.4.3",
+    "react-native-vscode-settings": "^0.0.6",
+    "react-test-renderer": "16.3.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
