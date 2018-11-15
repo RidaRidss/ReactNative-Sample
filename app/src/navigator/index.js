@@ -36,8 +36,8 @@ const navigator = Actions.create(
     key="root"
     tintColor={Colors.primary}
   >
-    <Scene hideNavBar key="home" component={Home} />
     <Scene hideNavBar key="dashboard" component={Dashboard} />
+    <Scene hideNavBar key="home" component={Home} />
   </Stack>
 );
 

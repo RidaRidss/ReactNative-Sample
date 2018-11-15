@@ -26,5 +26,23 @@ export default StyleSheet.create({
   },
   view2tems: {
     marginHorizontal: Metrics.ratio(5)
+  },
+  card: {
+    justifyContent: "center",
+    alignItems: "center",
+    width: Metrics.screenWidth - Metrics.ratio(38),
+    height: Metrics.ratio(80),
+
+    marginTop: Metrics.ratio(30)
+  },
+  noMoreCardsText: {
+    fontSize: 22
+  },
+  lottieParentView: {
+    flex: 1,
+    height: Metrics.screenHeight - Metrics.statusBarHeight,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: Colors.transparent
   }
 });
