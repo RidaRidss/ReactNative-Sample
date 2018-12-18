@@ -3,29 +3,16 @@
 import { connect } from "react-redux";
 import React, { Component } from "react";
 
-import _ from "lodash";
-
-import PropTypes from "prop-types";
-
 import { Actions } from "react-native-router-flux";
 
-import Carousel, { ParallaxImage } from "react-native-snap-carousel";
-
-import {
-  View,
-  ScrollView,
-  ActivityIndicator,
-  StatusBar,
-  TouchableHighlight,
-  Separator,
-  FlatList
-} from "react-native";
+import { View, ScrollView } from "react-native";
 
 import Swipeout from "react-native-swipeout";
 
 import { Text } from "../../components";
 
-import { Fonts, Metrics, Colors, Images } from "../../theme";
+import { Colors, ApplicationStyles } from "../../theme";
+
 import styles from "./styles";
 
 const RowTestData = [
@@ -71,13 +58,6 @@ const RowTestData = [
   }
 ];
 class Home extends Component<{}> {
-  static propTypes = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   renderRow(data) {
     let swipeBtns = [
       {
@@ -94,19 +74,10 @@ class Home extends Component<{}> {
           autoClose="true"
           backgroundColor="transparent"
         >
-          <View
-            style={{
-              backgroundColor: Colors.carrotOrange,
-              marginHorizontal: Metrics.ratio(19),
-              marginBottom: Metrics.ratio(10),
-              height: Metrics.ratio(60),
-              justifyContent: "center",
-              borderRadius: Metrics.ratio(2)
-            }}
-          >
+          <View style={[styles.swipeRow, ApplicationStyles.marginHorizontal]}>
             <Text
               type="AvenirNextDemiBold"
-              style={{ marginLeft: Metrics.ratio(10) }}
+              style={styles.rowText}
               color={Colors.color1}
             >
               {item.title}
@@ -123,12 +94,12 @@ class Home extends Component<{}> {
         showsHorizontalScrollIndicator={false}
         style={styles.container}
       >
-        <View style={styles.content}>
+        <View>
           <View style={styles.headTitle}>
             <Text
-              style={{ marginLeft: Metrics.ratio(19) }}
+              style={ApplicationStyles.marginHorizontal}
               type="AvenirNextMedium"
-              color={Colors.carrotOrange}
+              color={Colors.color2}
             >
               Choose Categories
             </Text>

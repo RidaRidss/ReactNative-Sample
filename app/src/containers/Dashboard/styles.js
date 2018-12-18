@@ -1,7 +1,7 @@
 // @flow
 import { StyleSheet, Platform, Dimensions } from "react-native";
 const { width, height } = Dimensions.get("window");
-import { Colors, Metrics, Fonts } from "../../theme";
+import { Colors, Metrics, Fonts, ApplicationStyles } from "../../theme";
 
 export default StyleSheet.create({
   container: {
@@ -32,17 +32,6 @@ export default StyleSheet.create({
     alignItems: "center",
     width: Metrics.screenWidth - Metrics.ratio(38),
     height: Metrics.ratio(80),
-
     marginTop: Metrics.ratio(30)
-  },
-  noMoreCardsText: {
-    fontSize: 22
-  },
-  lottieParentView: {
-    flex: 1,
-    height: Metrics.screenHeight - Metrics.statusBarHeight,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: Colors.transparent
   }
 });

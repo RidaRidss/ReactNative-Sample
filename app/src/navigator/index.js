@@ -1,24 +1,14 @@
 // @flow
 import React from "react";
-
-import { TouchableOpacity, Image, View, BackHandler } from "react-native";
 import { connect } from "react-redux";
 
-import {
-  Stack,
-  Scene,
-  Router,
-  Actions,
-  ActionConst,
-  Route,
-  Schema,
-  Drawer
-} from "react-native-router-flux";
+import { Stack, Scene, Router, Actions, Route } from "react-native-router-flux";
 import { Home, Dashboard } from "../containers";
 import { Colors, Images } from "../theme";
+import { TabButtonLeft } from "../components";
 import styles from "./styles";
 
-const BACK_SCENES = "home";
+const BACK_SCENES = "dashboard";
 
 function onBackPress() {
   const scene = Actions.currentScene;
@@ -32,12 +22,27 @@ function onBackPress() {
 const navigator = Actions.create(
   <Stack
     titleStyle={styles.title}
+    tintColor={Colors.primary}
     headerStyle={styles.header}
     key="root"
     tintColor={Colors.primary}
   >
-    <Scene hideNavBar key="dashboard" component={Dashboard} />
-    <Scene hideNavBar key="home" component={Home} />
+    <Scene
+      renderLeftButton={() => (
+        <TabButtonLeft imagesArray={["back"]} actions={[Actions.pop]} />
+      )}
+      title="Home"
+      key="dashboard"
+      component={Dashboard}
+    />
+    <Scene
+      renderLeftButton={() => (
+        <TabButtonLeft imagesArray={["back"]} actions={[Actions.pop]} />
+      )}
+      title="Categories"
+      key="home"
+      component={Home}
+    />
   </Stack>
 );
 

@@ -28,7 +28,7 @@ export default class Grocery extends React.Component {
         style={[containerStyle]}
         onPress={() => {
           if (data.key === "services") {
-            Utils.showToast("Feature in development");
+            Actions.home();
           } else {
             Utils.showToast("Feature in development");
           }

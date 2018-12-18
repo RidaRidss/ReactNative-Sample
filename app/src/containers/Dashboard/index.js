@@ -3,37 +3,20 @@
 import { connect } from "react-redux";
 import React, { Component } from "react";
 
-import _ from "lodash";
-
 import PropTypes from "prop-types";
 
 import { Actions } from "react-native-router-flux";
 
-import Carousel, { ParallaxImage } from "react-native-snap-carousel";
-
 import SwipeCards from "react-native-swipe-cards";
 
-import {
-  View,
-  ScrollView,
-  ActivityIndicator,
-  StatusBar,
-  TouchableHighlight,
-  Separator,
-  FlatList,
-  Animated,
-  Easing
-} from "react-native";
-
-import Swipeout from "react-native-swipeout";
-
-import LottieView from "lottie-react-native";
+import { View, ScrollView, FlatList } from "react-native";
 
 import { Text } from "../../components";
 
-import { Fonts, Metrics, Colors, Images } from "../../theme";
+import { Fonts, Colors, ApplicationStyles } from "../../theme";
 
 import { Grocery } from "../../controls";
+
 import styles from "./styles";
 
 const RowTestData = [
@@ -106,8 +89,6 @@ class Dashboard extends Component<{}> {
     super(props);
 
     this.state = {
-      progress: new Animated.Value(0),
-      start: true,
       cards: [
         {
           text: "Quick & Easy & Convinent Shopping Experience",
@@ -131,22 +112,6 @@ class Dashboard extends Component<{}> {
         }
       ]
     };
-  }
-
-  componentDidMount() {
-    Animated.timing(this.state.progress, {
-      toValue: 1,
-      duration: 5000,
-      easing: Easing.linear
-    }).start();
-    setTimeout(() => {
-      this.setState({
-        start: false
-      });
-    }, 100);
-    // this.animation.play();
-    // // Or set a specific startFrame and endFrame with:
-    // this.animation.play(30, 120);
   }
 
   renderGroceryHorizontalGrid = () => {
@@ -194,8 +159,7 @@ class Dashboard extends Component<{}> {
             </Text>
           </View>
         )}
-        // handleYup={this.handleYup}
-        yupText="one tap"
+        yupText="one tap shop"
         showNope={false}
         yupStyle={{
           borderColor: Colors.transparent
@@ -210,19 +174,16 @@ class Dashboard extends Component<{}> {
       />
     );
   };
+  renderIntroSection = () => {
+    return (
+      <View style={ApplicationStyles.marginHorizontal}>
+        <Text color="dis" type="SourceSansProSemiboldIt" size="large">
+          Introducing Grocery App
+        </Text>
+      </View>
+    );
+  };
   render() {
-    if (this.state.start) {
-      return (
-        <LottieView
-          style={styles.lottieParentView}
-          source={require("../../assets/gifs/go.json")}
-          progress={this.state.progress}
-          // ref={animation => {
-          //   this.animation = animation;
-          // }}
-        />
-      );
-    }
     return (
       <ScrollView
         showsHorizontalScrollIndicator={false}
@@ -231,6 +192,7 @@ class Dashboard extends Component<{}> {
         <View style={styles.content}>
           {this.renderAdmob()}
           {this.renderGroceryHorizontalGrid()}
+          {this.renderIntroSection()}
         </View>
       </ScrollView>
     );

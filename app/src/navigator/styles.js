@@ -23,7 +23,7 @@ export default StyleSheet.create({
     textAlign: "center",
     fontSize: Fonts.size.sixteen,
     fontFamily: Fonts.type.AvenirNextDemiBold,
-    color: Colors.darkStaleBlue
+    color: Colors.white
   },
   tabBarStyle: {
     borderTopColor: Colors.border,
